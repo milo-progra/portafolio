@@ -11,6 +11,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 // import { EditComponent } from './components/edit/edit.component';
+import * as $ from 'jquery';
 
 
 

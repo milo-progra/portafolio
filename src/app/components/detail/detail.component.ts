@@ -4,6 +4,7 @@ import { ProjectService } from 'src/app/services/project.service';
 import { Project } from 'src/app/models/project';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
+
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -14,6 +15,7 @@ export class DetailComponent implements OnInit {
 
   public url: string
   public project: Project;
+  public confirm:boolean = false;
   
 
   constructor(
@@ -67,6 +69,10 @@ export class DetailComponent implements OnInit {
         
       }
     )
+  }
+
+  setConfirm(confirmParm:boolean){
+    this.confirm = confirmParm;
   }
 
     
