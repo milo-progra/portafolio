@@ -1,0 +1,52 @@
+<div class="container">
+
+    <h2>{{title}}</h2>
+    <div class="message seccuss" *ngIf="status == 'success'">
+
+        El proyecto se ha creado correctamente
+    </div>
+    <div class="message failded" *ngIf="status == 'failded'">
+
+        El proyecto no se ha podido crear
+    </div>
+
+    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+        <p>
+            <label for="name">Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required>
+            <span class="form_error" *ngIf="name.touched  && !name.valid">
+                El nombre es obligatorio!!!!!!!!
+            </span>
+        </p>
+        <p>
+            <label for="name">descripcion</label>
+            <textarea name="description" #description ="ngModel" [(ngModel)]="project.description" required> </textarea>
+            <span  class="form_error" *ngIf="description.touched  && !description.valid">
+                La description es obligatoria!!!!!!!!
+            </span>
+        </p>
+        <p>
+            <label for="name">Año</label>
+            <input type="text" name="year" #year="ngModel" [(ngModel)]="project.year" required>
+            <span  class="form_error" *ngIf="year.touched  && !year.valid">
+                El año es obligatorio!!!!!!!!
+            </span>
+        </p>
+        
+        <p>
+            <label for="name">Lenguajes utilizados</label>
+            <input type="text" name="langs" #langs="ngModel" [(ngModel)]="project.langs" required>
+            <span  class="form_error" *ngIf="langs.touched  && !langs.valid">
+                los Lenguajes son obligatorio!!!!!!!!
+            </span>
+        </p>
+        <p>
+            <label for="name">imagen del proyecto</label>
+            <input type="file" name="image" #image="ngModel" placeholder="subir imagen" [(ngModel)]="project.image" (change)= "fileChangeEvent($event)">
+        </p>
+        
+        <input type="submit" value="enviar" [disabled]="!projectForm.form.valid">
+
+
+    </form>
+</div>

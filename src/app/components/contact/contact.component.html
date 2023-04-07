@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Contacto</h1>
+    <!-- con gnModel selecciono un elemento del componente y modifico su valor  -->
+    <input type="number" [(ngModel)]="widthSlider">
+    <button (click)="cargarSlider()">Cargar Slider</button>
+    <button (click)="resetearSlider()">Resetear Slider</button>
+    <div *ngIf="anchuraToSlider">
+      <app-slider [anchura]="anchuraToSlider"
+                  [etiquetas]="captions"
+                  (conseguirAutor)="getAutor($event)"></app-slider>
+    </div>
+    <div *ngIf="autor">
+      {{autor.nombre + " " + autor.webside}}
+    </div>
+</div>
