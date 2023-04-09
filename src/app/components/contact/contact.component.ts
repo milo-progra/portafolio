@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
-declare const $: any;
 
 @Component({
   selector: 'app-contact',
@@ -9,22 +8,35 @@ declare const $: any;
 })
 export class ContactComponent implements OnInit {
   
-  constructor() { }
+  public widthSlider:number;
+  public anchuraToSlider:number;
+  public captions:boolean;
+  public autor:any;
+
+  @ViewChild('textos',{static:true}) textos;
+
+  constructor() { 
+    this.captions = false;
+  }
 
   ngOnInit(): void {
-    $("#logo").click(function () {
-      $("header")
-          .css("background", "green")
-          .css("height", "50px");
- 
-    });
-    $(".galeria").bxSlider({
-      mode: 'fade',
-      captions: false,
-      slideWidth: 500
-    });
+    console.log(this.textos.nativeElement.outerText);
     
-  
   }
+  cargarSlider(){
+    this.anchuraToSlider = this.widthSlider;
+  }
+
+  resetearSlider(){
+    this.anchuraToSlider = NaN;
+  }
+
+  getAutor(event){
+    console.log(event);
+    
+    this.autor = event;
+    
+  }
+
 
 }

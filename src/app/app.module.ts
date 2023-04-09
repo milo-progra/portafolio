@@ -12,6 +12,8 @@ import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 // import { EditComponent } from './components/edit/edit.component';
 import * as $ from 'jquery';
+import { SliderComponent } from './components/slider/slider.component';
+import { ResaltadoDirective } from './resaltado.directive';
 
 
 
@@ -24,6 +26,8 @@ import * as $ from 'jquery';
     ContactComponent,
     DetailComponent,
     EditComponent,
+    SliderComponent,
+    ResaltadoDirective
     
     
   ],
